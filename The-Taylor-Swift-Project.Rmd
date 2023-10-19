@@ -1,7 +1,7 @@
 ---
 title: "Quantifying Taylor Swift's Pen-Themed Songwriting Approach"
 author: "Valeri Vankov"
-output: github_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -115,7 +115,7 @@ taylorswift[taylorswift$album_name == "Fearless Platinum Edition", ]$album_name 
 The lyrics for the tracks in `taylorswift` will be used as another field to characterize Swift"s discography.
 
 ```{r}
-taylorswift$lyrics <- read.csv("R/Taylor_Swift_Genius_Data.csv")$Lyrics
+taylorswift$lyrics <- read.csv("~/GitHub/taylor-swift-pen-themed-songwriting/Taylor_Swift_Genius_Data.csv")$Lyrics
 taylorswift$lyrics <- gsub("\n", " ", taylorswift$lyrics)
 taylorswift$lyrics <- iconv(taylorswift$lyrics, "utf-8", "ascii", sub="")
 ```
