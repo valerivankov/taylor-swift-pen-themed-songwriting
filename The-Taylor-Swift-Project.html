@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="quantifying-taylor-swifts-pen-themed-songwriting-approach">Quantifying
+Taylor Swift’s Pen-Themed Songwriting Approach</h1>
+<p>Valeri Vankov</p>
+<h1 id="introduction">Introduction</h1>
+<p>During her <a href="https://www.youtube.com/watch?v=lIrHts62ACQ&amp;t=122s">acceptance
+speech</a> for the Innovator Award at the 2023 iHeartRadio Music Awards,
+Taylor Swift stated that people in any industry often look for a
+precedent or data that shows that an idea is good or feasible; that is,
+an example of something working before. However, she believes that the
+“the coolest ideas or moves or choices are the new ones, the ones that
+set a new precedent.”</p>
+<p>Inspired by this statement as well as my observations of Swift’s
+impact on music and popular culture, I decided to take a deep dive into
+her past work and use various inferential approaches to uncover
+potentially interesting patterns. In this analysis, I am using the <a href="https://developer.spotify.com/documentation/web-api/reference/get-audio-features">audio
+features</a> data from her official Spotify account as well as the
+lyrics of her songs according to Genius. To narrow down the scope of the
+analysis, I am only considering her 10 original studio albums, along
+with the deluxe tracks, but excluding any alternative versions (acoustic
+versions, demos, live performances, etc.). The goals of the project are
+broad, but in general I am interested in gaining insight from her lyrics
+and building a classifier for what Swift has described as three pen
+types for her writing process (quill, fountain pen, glitter gel pen).
+More about these definitions can be found in <a href="https://www.hollywoodreporter.com/news/music-news/taylor-swift-songwriting-process-nashville-speech-1235224700/">this</a>
+article by <em>The Hollywood Reporter</em>.</p>
+<p>Previous efforts have been done to examine Swift’s discography using
+various data-driven approaches. Thus, my hope is to expand on such type
+of research by applying some of the methods to her most up-to-date
+discography and contribute with useful information, especially in the
+area of Swift’s pen-themed approach to songwriting. Given that the said
+approach is not officially recognized and is rather based on loose
+definitions that are unique to Swift’s craft, it is intriguing to
+explore how Swift’s pen style is applied to her music and if it could be
+explained in more commonly accepted terms.</p>
+<p>It should be acknowledged that this research is limited in many ways.
+From the features to the methods I have selected, the project can hardly
+touch upon all of the aural and lyrical complexities that differentiate
+Swift from other musical acts. Moreover, this analysis treats Swift’s
+music in isolation from her status as a pop sensation and does not
+consider how her media presence might impact the nature of her work.
+Nevertheless, the analysis presented below is a good starting point to a
+greater endeavor of learning about the specifics of Taylor Swift’s
+music.</p>
+<h1 id="data-collection-and-cleaning">Data Collection and Cleaning</h1>
+<p>First, we are going to gather and preprocess the data that we will
+need for our analysis. The full code can be found below.</p>
+<h3 id="scrape-taylor-swifts-spotify-data">Scrape Taylor Swift’s Spotify
+data</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(spotifyr)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">library</span>(quanteda)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">library</span>(quanteda.corpora)</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">library</span>(quanteda.textplots)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">library</span>(quanteda.textstats)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">library</span>(readtext)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">library</span>(syuzhet)</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="fu">library</span>(FactoMineR)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="fu">library</span>(proxy)</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="fu">library</span>(stats)</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="fu">library</span>(tree)</span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">SPOTIFY_CLIENT_ID =</span> <span class="st">&quot;1a4b9b996ce44425beea7a5cd8b9c4ff&quot;</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">SPOTIFY_CLIENT_SECRET =</span> <span class="st">&quot;1e1d17e585324ac5a348cdff27ff0a83&quot;</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>access_token <span class="ot">&lt;-</span> <span class="fu">get_spotify_access_token</span>()</span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>ts <span class="ot">&lt;-</span> <span class="fu">get_artist_audio_features</span>(<span class="st">&quot;06HL4z0CvFAxyc27GXpf02&quot;</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a>ts <span class="ot">&lt;-</span> <span class="fu">apply</span>(ts, <span class="dv">2</span>, as.character)</span></code></pre></div>
+<h3 id="convert-ts-to-data-frame-and-remove-row-name">Convert ts to data
+frame and remove row name</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>ts <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(ts)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">row.names</span>(ts) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div>
+<h3 id="keep-only-relevant-columns">Keep only relevant columns</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>ts <span class="ot">&lt;-</span> ts[, <span class="fu">c</span>(<span class="st">&quot;track_name&quot;</span>, <span class="st">&quot;album_name&quot;</span>, <span class="st">&quot;album_release_date&quot;</span>, <span class="st">&quot;album_release_year&quot;</span>, <span class="st">&quot;danceability&quot;</span>, <span class="st">&quot;energy&quot;</span>, <span class="st">&quot;key&quot;</span>, <span class="st">&quot;loudness&quot;</span>, <span class="st">&quot;mode&quot;</span>,   <span class="st">&quot;speechiness&quot;</span>, <span class="st">&quot;acousticness&quot;</span>, <span class="st">&quot;instrumentalness&quot;</span>, <span class="st">&quot;liveness&quot;</span>, <span class="st">&quot;valence&quot;</span>, <span class="st">&quot;tempo&quot;</span>, <span class="st">&quot;time_signature&quot;</span>, <span class="st">&quot;duration_ms&quot;</span>, <span class="st">&quot;explicit&quot;</span>, <span class="st">&quot;key_name&quot;</span>, <span class="st">&quot;mode_name&quot;</span>, <span class="st">&quot;key_mode&quot;</span>)]</span></code></pre></div>
+<h3 id="select-all-unique-songs-from-the-original-studio-albums">Select
+all unique songs from the original studio albums</h3>
+<p>This selection captures a clean presentation of Swift’s discography,
+thereby excluding only live performances, alternative versions
+(e.g. remixes, demos, etc.), previously unreleased songs (also known as
+“vault tracks”) as well as songs that were not part of any of her studio
+albums (e.g. “I Don’t Wanna Live Forever”).</p>
+<p>First, an initial filtering will be done by selecting the most
+complete versions of each album, as shown below:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>taylorswift <span class="ot">&lt;-</span> ts[ts<span class="sc">$</span>album_name <span class="sc">%in%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>                    <span class="fu">c</span>(<span class="st">&quot;Midnights (The Til Dawn Edition)&quot;</span>, <span class="st">&quot;evermore (deluxe version)&quot;</span>, </span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>                      <span class="st">&quot;folklore (deluxe version)&quot;</span>, <span class="st">&quot;Lover&quot;</span>, <span class="st">&quot;reputation&quot;</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>                      <span class="st">&quot;1989 (Deluxe Edition)&quot;</span>, <span class="st">&quot;Red (Deluxe Edition)&quot;</span>, </span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>                      <span class="st">&quot;Speak Now (Deluxe Edition)&quot;</span>, <span class="st">&quot;Fearless Platinum Edition&quot;</span>, </span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>                      <span class="st">&quot;Taylor Swift&quot;</span>), ]</span></code></pre></div>
+<p>The duplicate tracks will be now removed from each album:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Remove &quot;Snow On The Beach (feat. More Lana Del Rey)&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># and &quot;Karma (feat. Ice Spice)&quot; from &quot;Midnights&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>taylorswift <span class="ot">&lt;-</span> taylorswift[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">23</span>), ]</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># Remove the voice memos from &quot;1989&quot;</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>taylorswift <span class="ot">&lt;-</span> taylorswift[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">105</span>, <span class="dv">106</span>, <span class="dv">107</span>), ]</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co"># Remove original demo recordings and</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co"># &quot;State Of Grace - Acoustic&quot; from &quot;Red&quot;</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>taylorswift <span class="ot">&lt;-</span> taylorswift[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">124</span>, <span class="dv">125</span>, <span class="dv">126</span>), ]</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co"># Remove acoustic and alternative versions</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co"># of &quot;Mine,&quot; &quot;Back to December,&quot; and &quot;Haunted&quot;</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>taylorswift <span class="ot">&lt;-</span> taylorswift[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">141</span>, <span class="dv">142</span>, <span class="dv">143</span>), ]</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co"># Remove &quot;Forever &amp; Always - Piano Version&quot; from &quot;Fearless&quot;</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>taylorswift <span class="ot">&lt;-</span> taylorswift[<span class="sc">-</span><span class="dv">143</span>, ]</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co"># Remove &quot;Teardrops on My Guitar - Pop Version&quot; from &quot;Taylor Swift&quot;</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>taylorswift <span class="ot">&lt;-</span> taylorswift[<span class="sc">-</span><span class="dv">173</span>, ]</span></code></pre></div>
+<p>Even though some of these songs are part of the deluxe versions of
+the albums, the album names will be shortened for convenience so as to
+represent the “musical era” that a track belongs to.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>album_name <span class="sc">==</span> <span class="st">&quot;Midnights (The Til Dawn Edition)&quot;</span>, ]<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="st">&quot;Midnights&quot;</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>album_name <span class="sc">==</span> <span class="st">&quot;evermore (deluxe version)&quot;</span>, ]<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="st">&quot;evermore&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>album_name <span class="sc">==</span> <span class="st">&quot;folklore (deluxe version)&quot;</span>, ]<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="st">&quot;folklore&quot;</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>album_name <span class="sc">==</span> <span class="st">&quot;1989 (Deluxe Edition)&quot;</span>, ]<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="st">&quot;1989&quot;</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>album_name <span class="sc">==</span> <span class="st">&quot;Red (Deluxe Edition)&quot;</span>, ]<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="st">&quot;Red&quot;</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>album_name <span class="sc">==</span> <span class="st">&quot;Speak Now (Deluxe Edition)&quot;</span>, ]<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="st">&quot;Speak Now&quot;</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>album_name <span class="sc">==</span> <span class="st">&quot;Fearless Platinum Edition&quot;</span>, ]<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="st">&quot;Fearless&quot;</span></span></code></pre></div>
+<h3 id="extract-the-lyrics-for-each-song">Extract the lyrics for each
+song</h3>
+<p>The lyrics for the tracks in <code>taylorswift</code> will be used as
+another field to characterize Swift”s discography.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>taylorswift<span class="sc">$</span>lyrics <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;R/Taylor_Swift_Genius_Data.csv&quot;</span>)<span class="sc">$</span>Lyrics</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>taylorswift<span class="sc">$</span>lyrics <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="st">&quot; &quot;</span>, taylorswift<span class="sc">$</span>lyrics)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>taylorswift<span class="sc">$</span>lyrics <span class="ot">&lt;-</span> <span class="fu">iconv</span>(taylorswift<span class="sc">$</span>lyrics, <span class="st">&quot;utf-8&quot;</span>, <span class="st">&quot;ascii&quot;</span>, <span class="at">sub=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<h3 id="remove-untouchable-since-it-is-a-cover">Remove “Untouchable”
+since it is a cover</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>taylorswift <span class="ot">&lt;-</span> taylorswift[<span class="sc">-</span><span class="fu">which</span>(taylorswift<span class="sc">$</span>track_name <span class="sc">==</span> <span class="st">&quot;Untouchable&quot;</span>), ]</span></code></pre></div>
+<h3 id="clear-the-row-names-and-make-the-quantitative-variables-numeric">Clear
+the row names and make the quantitative variables numeric</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">row.names</span>(taylorswift) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">17</span>) {</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  taylorswift[, i] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(taylorswift[, i])</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>}</span></code></pre></div>
+<h3 id="add-pen-types">Add pen types</h3>
+<p>This classification is based on the results of a <a href="https://www.reddit.com/r/TaylorSwift/comments/xoc8qm/results_playlists_quill_fountain_pen_or_glitter/">poll</a>
+that was responsed by around 500 Taylor Swift fans (also known as
+“Swifties”). Given the disproportionate amount of songs that the fans
+classified as “fountain pen” compared to “quill” and “glitter gel pen,”
+the creators of the poll decided to create their own Spotify playlists
+which allocate some of the fountain pen songs to the other two
+categories:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>taylorswift<span class="sc">$</span>pen <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="fu">nrow</span>(taylorswift))</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co"># fountain pen songs</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>fountain_pen <span class="ot">&lt;-</span> <span class="fu">get_playlist_tracks</span>(<span class="st">&quot;1Yf6Seg9lzZU4sqxqfekBw&quot;</span>)<span class="sc">$</span>track.name</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>fountain_pen <span class="ot">&lt;-</span> <span class="fu">trimws</span>(<span class="fu">gsub</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(Taylor’s Version</span><span class="sc">\\</span><span class="st">)|</span><span class="sc">\\</span><span class="st">(Taylor&#39;s Version</span><span class="sc">\\</span><span class="st">)&quot;</span>, <span class="st">&quot;&quot;</span>, fountain_pen))</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>fountain_pen[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Teardrops On My Guitar - Radio Single Remix&quot;</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>fountain_pen[<span class="dv">31</span>] <span class="ot">&lt;-</span> <span class="st">&quot;The Last Time&quot;</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>fountain_pen[<span class="dv">33</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Everything Has Changed&quot;</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co"># quill songs</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>quill <span class="ot">&lt;-</span> <span class="fu">get_playlist_tracks</span>(<span class="st">&quot;6MGHHVP4yRFChABnQTHS9Q&quot;</span>)<span class="sc">$</span>track.name</span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>quill <span class="ot">&lt;-</span> <span class="fu">trimws</span>(<span class="fu">gsub</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(Taylor’s Version</span><span class="sc">\\</span><span class="st">)|</span><span class="sc">\\</span><span class="st">(Taylor&#39;s Version</span><span class="sc">\\</span><span class="st">)&quot;</span>, <span class="st">&quot;&quot;</span>, quill))</span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co"># glitter gel pen songs</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a>glitter_gel_pen <span class="ot">&lt;-</span> <span class="fu">get_playlist_tracks</span>(<span class="st">&quot;1IFexfQzNRySsZwlYfpR2v&quot;</span>)<span class="sc">$</span>track.name</span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a>glitter_gel_pen <span class="ot">&lt;-</span> <span class="fu">trimws</span>(<span class="fu">gsub</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">(Taylor’s Version</span><span class="sc">\\</span><span class="st">)|</span><span class="sc">\\</span><span class="st">(Taylor&#39;s Version</span><span class="sc">\\</span><span class="st">)&quot;</span>, <span class="st">&quot;&quot;</span>, glitter_gel_pen))</span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a>glitter_gel_pen[<span class="dv">16</span>] <span class="ot">&lt;-</span> <span class="st">&quot;I Knew You Were Trouble.&quot;</span></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>track_name <span class="sc">%in%</span> fountain_pen, ]<span class="sc">$</span>pen <span class="ot">&lt;-</span> <span class="st">&quot;fountain pen&quot;</span></span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>track_name <span class="sc">%in%</span> quill, ]<span class="sc">$</span>pen <span class="ot">&lt;-</span> <span class="st">&quot;quill&quot;</span></span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>track_name <span class="sc">%in%</span> glitter_gel_pen, ]<span class="sc">$</span>pen <span class="ot">&lt;-</span> <span class="st">&quot;glitter gel pen&quot;</span></span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>track_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Never Grow Up&quot;</span>, <span class="st">&quot;SuperStar&quot;</span>, <span class="st">&quot;Breathe&quot;</span>, <span class="st">&quot;You&#39;re Not Sorry&quot;</span>, <span class="st">&quot;Stay Beautiful&quot;</span>, <span class="st">&quot;I&#39;m Only Me When I&#39;m With You&quot;</span>, <span class="st">&quot;Invisible&quot;</span>, <span class="st">&quot;A Perfectly Good Heart&quot;</span>), ]<span class="sc">$</span>pen <span class="ot">&lt;-</span> <span class="st">&quot;fountain pen&quot;</span></span>
+<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a>taylorswift[taylorswift<span class="sc">$</span>track_name <span class="sc">==</span> <span class="st">&quot;Hits Different&quot;</span>, ]<span class="sc">$</span>pen <span class="ot">&lt;-</span> <span class="st">&quot;glitter gel pen&quot;</span></span></code></pre></div>
+<p>As shown by the tables below, there are 75 fountain pen, 55 glitter
+gel pen, and 41 quill tracks, which comprise approximately 44%, 32%, and
+24% of Swift’s discography.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">table</span>(taylorswift<span class="sc">$</span>pen)</span></code></pre></div>
+<pre><code>## 
+##    fountain pen glitter gel pen           quill 
+##              75              55              41</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">table</span>(taylorswift<span class="sc">$</span>pen)<span class="sc">/</span><span class="fu">nrow</span>(taylorswift)</span></code></pre></div>
+<pre><code>## 
+##    fountain pen glitter gel pen           quill 
+##       0.4385965       0.3216374       0.2397661</code></pre>
+<h1 id="exploratory-data-analysis">Exploratory Data Analysis</h1>
+<p>First, we are going to display the distributions of pen types across
+albums:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>pen_distribution <span class="ot">&lt;-</span> taylorswift <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="fu">group_by</span>(album_name, pen) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  <span class="fu">group_by</span>(album_name) <span class="sc">%&gt;%</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum =</span> <span class="fu">sum</span>(count)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percentage =</span> (count <span class="sc">/</span> <span class="fu">sum</span>(count)) <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>pen_distribution <span class="ot">&lt;-</span> pen_distribution[</span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>  <span class="fu">order</span>(<span class="fu">match</span>(pen_distribution<span class="sc">$</span>album_name, <span class="fu">rep</span>(<span class="fu">unique</span>(taylorswift<span class="sc">$</span>album_name), <span class="at">each =</span> <span class="dv">3</span>))), ]</span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a>pen_distribution<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="fu">factor</span>(</span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a>  pen_distribution<span class="sc">$</span>album_name, </span>
+<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a>  <span class="at">levels =</span> <span class="fu">rev</span>(<span class="fu">unique</span>(pen_distribution<span class="sc">$</span>album_name)))</span>
+<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a><span class="fu">ggplot</span>(pen_distribution, </span>
+<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> album_name, </span>
+<span id="cb15-17"><a href="#cb15-17" tabindex="-1"></a>           <span class="at">y =</span> percentage, <span class="at">fill =</span> pen)) <span class="sc">+</span></span>
+<span id="cb15-18"><a href="#cb15-18" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb15-19"><a href="#cb15-19" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Pen Types by Album&quot;</span>,</span>
+<span id="cb15-20"><a href="#cb15-20" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Album Name&quot;</span>,</span>
+<span id="cb15-21"><a href="#cb15-21" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Percentage&quot;</span>) <span class="sc">+</span></span>
+<span id="cb15-22"><a href="#cb15-22" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb15-23"><a href="#cb15-23" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb15-24"><a href="#cb15-24" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span> </span>
+<span id="cb15-25"><a href="#cb15-25" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;fountain pen&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightblue&quot;</span>, <span class="st">&quot;glitter gel pen&quot;</span> <span class="ot">=</span> <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;quill&quot;</span> <span class="ot">=</span> <span class="st">&quot;brown&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb15-26"><a href="#cb15-26" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">&quot;Pen Types&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb15-27"><a href="#cb15-27" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">100</span>) <span class="sc">+</span></span>
+<span id="cb15-28"><a href="#cb15-28" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb15-29"><a href="#cb15-29" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
+<pre><code>## Scale for y is already present.
+## Adding another scale for y, which will replace the existing scale.</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>There are a number of trends that could be observed from this mosaic
+plot. The percentage of fountain pen songs decreased after <em>Red</em>
+while the the percentage of quill tracks increased, reaching a
+noticeable peak during the <em>folklore</em> and <em>evermore</em> era.
+The percentage of glitter gel pen songs across albums is relatively
+consistent, with <em>Midnights</em> and <em>1989</em> having the highest
+percentage of glitter gel pen songs while <em>folklore</em> and
+<em>evermore</em>, followed by <em>Speak Now</em>, have the lowest
+percentage of such tracks. In other words, fountain pen songs
+predominated Swift’s country era; glitter gel pen songs were the most
+popular throughout her pop eras; and quill songs were the most frequent
+in her indie eras. Thus, her songwriting approach is strongly dependent
+on the album and genre she is working with.</p>
+<p>Next, we are going to create boxplots for the distributions of each
+of the pen types using the variables that cause the highest variability
+in the data. This can be done using principal components analysis (PCA).
+Before that, we are going to include two more categories: lexical
+diversity and sentiment score. To add those, we need to convert the
+dataset to a document-feature matrix.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># Creating corpus</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>taylorswift_corpus <span class="ot">&lt;-</span> <span class="fu">corpus</span>(taylorswift, <span class="at">text_field =</span> <span class="st">&quot;lyrics&quot;</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="co"># Creating tokens</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>taylorswift_tokens <span class="ot">&lt;-</span> <span class="fu">tokens</span>(taylorswift_corpus, <span class="at">remove_punct =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="co"># Creating document-feature matrix</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>taylorswift_dfm <span class="ot">&lt;-</span> <span class="fu">dfm</span>(taylorswift_tokens)</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="co"># Removing English stopwords</span></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>taylorswift_dfm <span class="ot">&lt;-</span> <span class="fu">dfm_remove</span>(taylorswift_dfm, <span class="at">pattern =</span> <span class="fu">stopwords</span>(<span class="st">&quot;en&quot;</span>))</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a><span class="co"># Converting the words to their word stems</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>taylorswift_dfm <span class="ot">&lt;-</span> <span class="fu">dfm_wordstem</span>(taylorswift_dfm)</span></code></pre></div>
+<p>Now we can add lexical diversity by calculating the type-token ratio
+(TTR) for the lyrics of each track.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>taylorswift<span class="sc">$</span>ttr <span class="ot">&lt;-</span> <span class="fu">textstat_lexdiv</span>(taylorswift_dfm, <span class="st">&quot;TTR&quot;</span>)[, <span class="dv">2</span>]</span></code></pre></div>
+<p>We also add the sentiment score, whose value is above 0 if the
+overall sentiment of the lyrics is positive and below 0 if the sentiment
+is negative. In later sections we will conduct a more in-depth sentiment
+analysis.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>taylorswift<span class="sc">$</span>sentiment <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">get_sentiment</span>(taylorswift<span class="sc">$</span>lyrics), <span class="dv">2</span>)</span></code></pre></div>
+<p>Having these features as well, we are going to use PCA to see which
+ones account for the most variability in the dataset:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Subsetting the continuous features</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>taylorswift_cont <span class="ot">&lt;-</span> taylorswift[, <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">8</span><span class="sc">:</span><span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">24</span>, <span class="dv">25</span>)]</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="co"># Label encoding &quot;explicit&quot; as 0 or 1</span></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>taylorswift_cont<span class="sc">$</span>explicit <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(taylorswift_cont<span class="sc">$</span>explicit <span class="sc">==</span> <span class="st">&quot;TRUE&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="co"># One-hot encoding for &quot;key_name&quot;</span></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>taylorswift_cont <span class="ot">&lt;-</span> <span class="fu">cbind</span>(taylorswift_cont, <span class="fu">as.data.frame</span>(<span class="fu">model.matrix</span>(<span class="sc">~</span><span class="dv">0</span> <span class="sc">+</span> taylorswift[, <span class="st">&quot;key_name&quot;</span>])))</span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="co"># Scaling the data</span></span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>taylorswift_cont_scaled <span class="ot">&lt;-</span> <span class="fu">scale</span>(taylorswift_cont)</span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a><span class="co"># Applying PCA</span></span>
+<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a>taylorswift_cont_pca <span class="ot">&lt;-</span> <span class="fu">PCA</span>(taylorswift_cont_scaled, <span class="at">graph =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a><span class="co"># Retrieving top 10 features</span></span>
+<span id="cb20-13"><a href="#cb20-13" tabindex="-1"></a>taylorswift_cont_pca<span class="sc">$</span>var<span class="sc">$</span>coord[, <span class="dv">1</span>][<span class="fu">order</span>(<span class="fu">abs</span>(taylorswift_cont_pca<span class="sc">$</span>var<span class="sc">$</span>coord[, <span class="dv">1</span>]), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)][<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
+<pre><code>##                     energy                   loudness 
+##                  0.8653286                  0.8567088 
+##               acousticness                    valence 
+##                 -0.8339279                  0.5198364 
+##                        ttr                   explicit 
+##                 -0.4822469                 -0.3370688 
+##                   liveness taylorswift[, &quot;key_name&quot;]C 
+##                  0.3311370                 -0.3116631 
+##               danceability taylorswift[, &quot;key_name&quot;]G 
+##                  0.2767139                  0.2414246</code></pre>
+<p>We are going to create plots for the top 5 features.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>taylorswift_pca_vars <span class="ot">&lt;-</span> <span class="fu">names</span>(taylorswift_cont_pca<span class="sc">$</span>var<span class="sc">$</span>coord[, <span class="dv">1</span>][</span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>  <span class="fu">order</span>(<span class="fu">abs</span>(taylorswift_cont_pca<span class="sc">$</span>var<span class="sc">$</span>coord[, <span class="dv">1</span>]), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)])[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a><span class="cf">for</span> (var <span class="cf">in</span> taylorswift_pca_vars) {</span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(taylorswift, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(pen, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;quill&quot;</span>, <span class="st">&quot;fountain pen&quot;</span>, <span class="st">&quot;glitter gel pen&quot;</span>)), </span>
+<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a>                              <span class="at">y =</span> .data[[var]], <span class="at">fill =</span> pen)) <span class="sc">+</span></span>
+<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;fountain pen&quot;</span> <span class="ot">=</span> <span class="st">&quot;lightblue&quot;</span>, <span class="st">&quot;glitter gel pen&quot;</span> <span class="ot">=</span> <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;quill&quot;</span> <span class="ot">=</span> <span class="st">&quot;brown&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Boxplot of&quot;</span>, var),</span>
+<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">&quot;pen type&quot;</span>,</span>
+<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a>      <span class="at">y =</span> var</span>
+<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb22-16"><a href="#cb22-16" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb22-17"><a href="#cb22-17" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb22-18"><a href="#cb22-18" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>)</span>
+<span id="cb22-19"><a href="#cb22-19" tabindex="-1"></a>    )</span>
+<span id="cb22-20"><a href="#cb22-20" tabindex="-1"></a>  </span>
+<span id="cb22-21"><a href="#cb22-21" tabindex="-1"></a>  plot_list[[var]] <span class="ot">&lt;-</span> p</span>
+<span id="cb22-22"><a href="#cb22-22" tabindex="-1"></a>  <span class="fu">print</span>(p)</span>
+<span id="cb22-23"><a href="#cb22-23" tabindex="-1"></a>}</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --><img src="data:image/png;base64,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" /><!-- --><img src="data:image/png;base64,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" /><!-- --><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAABU1BMVEUAAAAAADoAAGYAOjoAOmYAOpAAZmYAZpAAZrYzMzM6AAA6ADo6AGY6OgA6Ojo6OmY6OpA6ZpA6ZrY6kJA6kLY6kNtNTU1NTW5NTY5Nbo5NbqtNjo5NjqtNjshmAABmADpmAGZmOgBmOjpmZjpmZmZmkJBmkLZmkNtmtttmtv9uTU1uTW5uTY5ubo5ubqtuq6tuq+SOTU2OTW6OTY6Obk2Obm6Ojm6OyP+QOgCQOjqQZgCQZjqQZmaQkDqQkGaQkLaQtpCQttuQ27aQ29uQ2/+lKiqrbk2rbm6rbo6rjk2rq26r5P+t2Oa2ZgC2Zjq2kDq2tra229u22/+2/7a2/9u2///Ijk3I/8jI/+TI///bkDrbkGbbtmbbtpDb25Db27bb2//b/7bb///kq27k///r6+v/tmb/wMv/yI7/25D/27b/5Kv//7b//8j//9v//+T///8kOdiPAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAXjUlEQVR4nO2d+XscV1pGW56YkRTPQsBtj8EiGZaJkhDseECCYTbG2AHRYQiRQc0MA16EZW31//9E3Vq6qnr9uvVV3Vetcx4nqr66feut8nnuUl3V7iUAwvRiBwCYB4KCNAgK0iAoSIOgIA2CgjQICtIgKEiDoCANgoI0ayfocS/nux9bal/s3zpslrz7+fSa7z7q9TZfLtUUOLC2gvZ6HxhqT1h1sr05o2La4vRfzWoKPFhDQe9mP3+7vfF0cW2zoGc7txY0h6CtsLaCJsNyYx5LCHp73vg+rSnwYJ0F3Q0/fvOdXu9bH2e/CIqlQ/VuqtI3X/V63/t6ZNWo0jDMDSqxm+WFgKX52Z7e/SStUm/qtx8Vb0kGG7/6Sa/33i/D9sVX272NH+WNVjVgMWsr6G+2gy/Z1DEluDkIvxmmE8lUpZ+GwnQOkFlVq9QQdLy8EPRkO+9MB+n7T7bzKmVTecV8/jsY/apsKWu4VgMWs4aC9ioxUhs2fhnmo8GNs52Np8e9QsiPk4tB7upho1J9iG++uRriB1nfnHk66P1hWvxuJ62SNXXce+/fshX/bqiWvj3d12Zo6b2v0zeESPUasJg1FvRHoefKV0p5p5e6sRO8SKUJfVm67jkMVjUq1QRtlNcFPc6W88OaYsNS0EH+lrOdzaLHzioXLWVzg3oNWMwaCpqP0L/7KN0otSrmh4P8SlFpXupK+EWjUk3QRnld0GJekI/4F7/79d//sFcIWk4KsmlBrmJosPbmRg1YzNoKmllROZbJcpyP+6Wgw2y9dNioNFXQtLyxig9dYV7x4ieFbrmgZzulfqPedEzQRg1YzPoKOtE5ZnLkK/mr9aDZoJ+P8Ok8889+/uv/GY560Jp2M3pQxFyK9RU0n2LW56DpiiabF151Dhrc+4fsdVGaNZjPQWsT00rQoqWs7QGro6VYW0HTdfJmcyEeVvBhJR98KtfXU1bx3x6JOGsVH5r6buF4qBE+ph+t4jc+ToX917DvStB8Ff9uP7hZrwGLWUNB65O82qXMs53cj9sv0w7tO0WF8eug2YXNKddBxwQNiuezhHJnhevJV9W+a4IWLWVN1GrAYtZW0G/9RS7U6MOgQbGC791NBf1Vqsnvv5z8JClJ/mu71rdV5WMfdQ6LRXj4hCjd1X9vB+1HTW18EH5ZEzT/JOmDKlG5DYtYO0ENlJNLuAYgKEiDoCANgoI0N1FQuEYgKEiDoCANgoI0eoK+iR1gCoqZNEO5g6AWFDNphnIHQS0oZtIM5Q6CWlDMpBnKHQS1oJhJM5Q7CGpBMZNmKHcQ1IJiJs1Q7iCoBcVMmqHcQVALipk0Q7mDoBYUM2mGcgdBLShm0gzlDoJaUMykGcodBLWgmEkzlDsIakExk2YodxDUgmImzVDuIKgFxUyaodxBUAuKmTRDuYOgFhQzaYZyB0EtKGZKtmIH6AQEtaCYCUEjoSiDYiYEjYSiDIqZEDQSijIoZkLQSCjKoJgJQSOhKINiJgSNhKAMW1uKMihm8gdBF7O1JWmoYKQWQNDFIGhEEHQxCBoRBDUg6SeCRkJQUMlMCBoJRRkUMyFoJBRlUMyEoJFQlEExE4JGQlEGxUwIGglFGRQzIWgkFGVQzISgkVCUQTETgkZCUQbFTAgaCUUZFDMhaCQUZVDMhKCRUJRBMROCRkJRBsVMCBoJRRkUMyFoJBRlUMyEoPN5A5HZaqthT7+uDD2oBcVM9KCRUJRBMROCRkJRBsVMCBoJRRkUMyFoJBRlUMyEoJFQlEExE4JGQlEGxUwIGglFGRQzIWgkFGVQzISgkVCUQTETgkZCUQbFTAgaCUUZFDMhaCQUZVDMhKCRUJRBMROCRkJRBsVMCBoJRRkUMyFoJBRlUMyEoJFQlEExE4JGQlEGxUwIGglFGRQzIWgkFGVQzISgkVCUQTETgkZCUQbFTAgaCUUZFDMhaCQUZVDMhKCRUJRBMROCRkJRBsVMCBoJRRkUMyFoJBRlUMyEoJFQlEExE4JGQlEGxUwIGglFGRQzIWgkFGVQzISgkVCUQTETgkZCUQbFTAgaCUUZFDMhaCQUZVDMhKCRUJRBMROCRkJRBsVMCBoJRRkUMyFoJBRlUMyEoJFQlEExE4JGQlEGxUwIGglFGSRdkAzlDoJakHRBMpQ7CGpB0gXJUO4gqAVJFyRDuTNH0PPH/Qevw8arfmAv+3n/qO1ECGpEMpQ7swW9fJYq+bB89TZ19cVeF4kQ1IhkKHdmC3r+5Cg5/azoMM+/OEgunx90kQhBjUiGcme2oKefv868zAhdaTrkh4G+4M1NYit2gGm0Fqp16ZZhtqBhUC8FzX6eftpJL6p1fnIkOyvJUO7YetC3+Woppf15KIIakQzljm0O+uJRWYqgMkiGcmfeKv5RuYrPB/bQjV5+yWUmFSRDubPwOmjoRIuR/lW/f6/9hTyCGpEM5Q6fJFmQdEEylDsIakHSBclQ7iCoBUkXJEO5g6AWJF2QDOUOglqQdEEylDsIakHSBclQ7iCoBUkXJEO5g6AWJF2QDOUOglqQdEEylDsIakHSBclQ7iCoBUkXJEO5g6AWJF2QDOUOglqQdEEylDsIakHSBclQ7iCoBUkXJEO5g6AWJF2QDOUOglqQdEEylDsIakHSBclQ7iCoBUkXJEO5g6AWJF2QDOUOglqQdEEylDt6giqed8VMmqHcQVALipk0Q7mDoBYUM2mGcgdBLShm0gzlDoJaUMykGcodBLWgmEkzlDsIakExk2YodxDUgmImzVDuIKiFVjNtdUybx+IPglpoV9D/6xTF8zsHBLWAoNFAUAsIGg0EtYCg0UBQCwgaDQS1gKDRQFALCBoNBLWAoNFAUAsIGg0EtYCg0UBQCwgaDQS1gKDRQFALCBoNBLWAoNFYWdA3bbHVWsur02qmrgVdGMjTrytDD2qBHjQaCGoBQaOBoBYQNBoIagFBo4GgFhA0GghqAUGjgaAWEDQaCGoBQaOBoBYQNBoIagFBo4GgFhA0GghqAUGjgaAWEDQaCGoBQaOBoBYQNElO3v9Zr3f7ZZJc7Pd6tw7T17/Y7vV2XU/FFBDUAoKmgm7fOrzY30zCf8nw9suT7dTWYWpquyCoBQQNgu6GbvTpcXDybGe3fO16LiZBUAsIWriYijnsZdzNXiOoBghaEzTMQ8vXCKoBgpZD/J3D443cSQQVAkHri6S0C00tRVAhELS4zJQu4LPLTGkviqBCIGgXLk4FQS0gKIKOQFAErYGgFhA0GghqAUGjgaAWEDQaCGoBQaOBoBYQNBpNQYe93uiz1lgonkAEjUZD0MHt/93Zze73i4jiCUTQaNQFPdvZTf8kx63fhDoXxROIoM3EV2/CDIJaaFfQjnFIfPUmzDSG+GEY4s927na4/0kQFEFrNBdJx9m90h3ufgo3T1CG+DlwmckCgmZB2+iNF4GgFhA0C/ov43Qt6MX+3ST2VSYERdA6zeug+Q3TXAcdB0GzoHMEvdifvnY5uXM4sbUUY5eZwg8uM02AoFnQOYLO0m9FLSsQ1AKCZkFnC3q209t4mv4vfCXOney/k+//Xa+3mxWdZF+RMyrL6n/40/BcU1K8ZVQ+SfM6aP6lEVwHHQdBs6BzVvFBy8Hd5Pj2y1LQ7fLV2Z88zQpGZUmQ7PbL0BGmbxluJlX5JFwHtYCgWdD5Q/zZh4dJKmMpaPUjCT3mYVWW5IP1xd8+De7mv5o5F+AykwUEzYLOFzQolko3RdBB+Dq8pqCpmckgzADCI8wIelUQNAu6Wg8aestiiG8IGnrQDw+LN9sEDbPZXvbljxFB0GsqaDEHDe4Nb9UEzbbefzo2xG9ms87GtHXqTuuCjl0BPX/cf/A623rV7/fvH9UK2gRBZQVdsEjKl+Thrvc/GM0rL/ZvHaYF7320O9aD/mm5it94au5Bi8tMBZfP9pJXD7PNF3tjBW2CoKqCVomv3EI2BzXR7EHrgp4/OUpOPztKty6fHzQLWgVBEbRGYw7auER/+vnr5PyLoGY6tPf7e7WCwJu22Gqt5dVpNVPXgi4MtFCaeHfU92qLpLcPSh9PPz0IvWhV0Cr0oC0L2uax+DP7MlOzw0znoWMFbaF4AhE0GrMFHZtyvthjDtpS4wg6h9nPxV8+e1Qs2sPYfvnlUVXQKoonEEGjMee5+PyyZ+gzX/X79w4SroO21Pi1E5THjtVA0GbiqzdhBkEtIGgz8dWbMMNz8RYQtJn46k2Y4X5QCwiaBeWx4wCCygrq2JYZBLWAoNODdilo+Tkn94NOAUGnB51oa3QH6IKnOe0Pe9KDWkDQ6UGnCZokCYJ2DYJOD1prKx2B3/thftv8v+/k43DxTPH3Prp1OKqQVM8m2x4+vmGPfFztiwuXx5Tp2gg67/jCwxsbTxtDfPlM8W6tQllYPPix+OHj5g3Ldy/2d5v31XdPu4JOPFbTKmsm6Jy2wuNv+SOdoz+1Z4qrCo1Cy8PH4498DGY/Qt8RCHodBT35/ssJQatniqsKjULLw8fjgqZd7Tp/1ImgHfag1TPFVYVGoeXh4/Fvt0vtjPzv0CDodRR0xhy0eKa4qtAotDx8PPH9oINsXRURBJUVdN4iKR2nv132oBf7t77Zz1bxxTPFVYWkXmh5+PiGXWZC0BZvFll4cXO8guXZTgRF0OXP4mTRxX5v/tA7rcKygsa+0S4HQa+joK3RvB+0N/N7RJen7Wvgc+ZDc0IhqOIndXMYH+IHC3pqO1v/2C0IeiMETRn4XAdFUAR1YEoP6nSdHkER1IHmhXq38T1BUAR1YfbXL14VBF1bQeM9NOcJgiKoAwiKoEuDoAiqKOiK156vBoLGF1TwAw3j3yiC3gRBVz7BbTY+dYcIiqDLnOA2G5+6Q/M5Nz16bANBEdS8w2XOOYIiaJuNT93hvHM+umHZ/OUNNhAUQc07nLPgCg9jDDcQFEFrx9Jm41N3OOecT/xDnQiKoG02PnWHc8559dgxgiJocSxtNj51h3POOT0ogk4cS5uNT93hvHM+yOag1T91jKAI2mbjU3c471OpdBX/e8HO8p86RlAEbbPxVfZs/xdilwBBEdRrzwiKoI1jabNxmT0jKIJKg6AIKg2CIqg0Kwv6ZhGdC7owUQjVsaCWTKvSWuOefl0ZetBWBW3t7Cb0oFcFQRHUAQRFUGkQFEGlQVAElQZBEVQaBEVQaRAUQaVBUASV5qYJ2jGtnd0EQa8KgiKoAzdNUIb4awaCIqg0CIqg0iAogkqDoAgqDYIiqDQIiqDSICiCSoOgCCoNgiKoNC0KqvixIoJeNxAUQaVhiEdQaRAUQaVBUASVBkERVBoERVBpEBRBpUFQBJUGQRFUGgRFUGkQFEGlQVAElQZBEVQaBEVQaRAUQaVBUASVBkERVBoERVBpEBRBpUFQBJUGQRFUGgRFUGkQFEGlQVAElWaOoOeP+w9eZ1unn/T7e0nyqt/v3z+ytoygCOrAbEEvn+0lrx6GrfMvDpLTTw+SF3vLtIygCOrAbEHPnxwlp5+FDvNt0PTF3uXzg2VaRlAEdWC2oKefv876zpx0Kx3ys5E+580iOhd0YaIQqmNBLZlWpbXG23ZuKWYL+vZBTdDLZ4+yUX6JXpQelB7UAVsPev74UVFqn4ciKII6YJmDpqv4kZbXXVDBb9xblZsuaBjV81V84WcY8y+/vN6XmVZE0gXJUO4svA6adqLh+mdYHqU/79kX8gjaMpKh3LlhnySteiwttr0ykqHcQVDTsbTY9spIhnIHQU3H0mLbKyMZyh0ENR1Li22vjGQodxDUdCwttr0ykqHcQVDTsbTY9spIhnIHQU3H0mLbKyMZyh0ENR1Li22vjGQodxDUdCwttr0ykqHcQVDTsbTY9spIhnIHQU3H0mLbKyMZyh0ENR1Li22vjGQodxDUdCwttr0ykqHcQVDTsbTY9spIhnIHQU3H0mLbKyMZyh0ENR1Li22vjGQodxDUdCwttr0ykqHcaVHQNXr+R9IFyVDutCfoqiied8VMmqHcQVALipk0Q7mDoBYUM2mGcgdBLShm0gzlDoJaUMykGcodBLWgmEkzlDsIakExk2YodxDUgmImzVDuIKgFxUyaodxBUAuKmTRDuYOgFhQzaYZyB0EtKGbSDOUOglpQzKQZyh0EtaCYSTOUOwhqQTGTZih3ENSCYibNUO4gqAXFTJqh3EFQC4qZNEO5g6AWFDNphnIHQS0oZtIM5Q6CWlDMpBnKHQS1oJhJM5Q7CGpBMZNmKHcQ1IJiJs1Q7iCoBcVMmqHcQVALipk0Q7mDoBYUM2mGcmdlQd+0xVZrLa+OYqb2Qnn6dWXoQS0oZtIM5Q6CWlDMpBnKHQS1oJhJM5Q7CGpBMZNmKHcQ1IJiJs1Q7iCoBcVMmqHcQVALipk0Q7mDoBYUM2mGckdPUK3rxDmSLkiGcgdBLUi6IBnKHQS1IOmCZCh3ENSCpAuSodxBUAuSLkiGcgdBLUi6IBnKHQS1IOmCZCh3ENSCpAuSodxBUAuSLkiGcgdBLUi6IBnKHQS1IOmCZCh3ENSCpAuKJ8ofBLWAoNFAUAsIGg0EtYCg0UBQCwgaDQS1gKDRQFALCBoNBLWAoNFAUAsIGg0EtYCg0UBQCwgaDQS1gKDRQFALCBoNBLWAoNFAUAsIGg0EtaCYSTOUOwhqQTGTZih3ENSCYibNUO4gqAXFTJqh3EFQC4qZNEO5g6AWFDNphnIHQS0oZtIM5Q6CWlDMpBnKHQS1oJhJM5Q7CGpBMZNmKHcQ1IJiJs1Q7iCoBcVMmqHcmSPo+eP+g9f1raqgTRTPu2ImzVDuzBb08tle8uphbasqaBXF866YSTOUO7MFPX9ylJx+dlRtVQWtonjeFTNphnJntqCnn79Ozr84qLaqgsAbWFc6Ec/KbEHfPih9LLaqglbROj85ipk0Q7mzcg/aGornXTGTZih39OagADXmreIfjVbxj/JV/KMuVvEANRZeBw19ZqfXQQFq6H2SBFADQUEaBAVpEBSkQVCQBkFBGkVBTz87yv90tL/LZ/1HM3JMbHXK6EQs2P86f3yiKGhS/tV0t7OlyjsjD4CgApw/7v/x84Nwoq29huu+7x2k/7uff5Ibdv35P/X7e1nR6SfpVlWW1X/yz+kbsveFt4zKnTP94K8PsrPwH4/7KfePit395Y/vH40qJFXsbnJ1j4ag2aeo9yIJmv39vngUbtoqA3xSvgo3xxRx8rIkCPDg9dv72VtePUyqck9CnHsHjXNR7m6vVqEszAXtIFf3aAga7kMJ90tFE3QiQG1gTX9XlYXXj/eSy+cHwd38V/5DbIhz+bwhaG13VYVGYQe5IqAhaLiT7zLWEF+62AgwEvRFGF6bgoZbDl+EGUC/P+r1nRONzkclaLW7qkKjsINcEdAQVLYHDb1SFacSIcjx5Kh4czc9aLW7qkKjsINcEdAQNJs33ctGp1f3YwhazEGrAHUtPz0YG+IfZrO7xrTVOdL0OWixu6pCo7CLXN0jImg6Lv1RkKPf/6snUQTNl75VgFB4+ez+UVrwgx/vjfWgf1Oulu8dtNRTja5q5DH+81m2ii92V1VI6oVd5OoeEUGTpIunSXzoKOhCu8YrXJsTuBQIujQdBL181s86w6UqXJsTuBQ6ggJMAUFBGgQFaRAUpEFQE+++jp3gpoKgFk7efxo7wk0FQS0gaDQQtOTk/Z/1erdfJsnFfq936zB9/YvtXm83+1W6cXewmW4NN8erQbsgaMnJ9q3Di/3NJPyXDG+/PNlONRzmCoYe9DjdvNjfHa8WO/a6g6AlJ9u7mYlBxORsZ7d8nf0u/ZEWJSd3DserxY697iBoSeZiatywl3E3e10TNB3ew5/xarFjrzsIWjIyrxi2JwQ9ufPN/u5ENWgXBC3Jx+47h8cb+Yp9QtCL/T+/czhRDdoFQUuq1U/aN6b61QXN55rD3uZktcip1x4ELcmuH4VLSeH6USpeXdBkkLu5O1kN2gVBSxZfjE8Hdq7Zdw2Cliw2b3jXVA08QdCSReZlF+4RtGsQFKRBUJAGQUEaBAVpEBSkQVCQBkFBmv8HN6bW5KdN5k4AAAAASUVORK5CYII=" /><!-- --><img src="data:image/png;base64,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h0BNNFPQtPKHQE00U9C08odATTRT0LTyh0BNNFPQtPKHQE00U9C08odATTRT0LTyh0BNNFPQtPKHQE00U9C08odATTRT0LTyh0BNNFPQtPKHQE00U9C08odATTRT0LTyh0BNNFPQtPKHQE00U9C08odATTRT0LTyh0BNNFPQtPKHQE00U9C08odATTRT0LTyZ/lA36wam6kFZhLQKkBm3WELaqK5rdK08odATTRT0LTyh0BNNFPQtPKHQE00U9C08odATTRT0LTyh0BNNFPQtPKHQE00U9C08odATTRT0LTyh0BNNFPQtPKHQE00U9C08odATTS1CDQ+miWIahFofDRLENUi0PholiCqRaDx0SxBVItA46NZgqgWgcZHswRRLQKNj2YJoloEGh/NEkS1CDQ+miWIahFofDRLENUi0PholiCqRaDx0SxBVItA46NZgqgWgcZHswRRLQKNj2YJoloEGh/NEkS1CDQ+miWIahFofDRLENUi0PholiCqRaDx0SxBVItA46NZgqgWgcZHswRRLQKNj2YJoloEGh/NEkS1CDQ+miWIahFofDRLENUi0PholiCqRaDx0SxBVItA46NZgqiWppU/BGqiqaVp5Q+BmmhqaVr5Q6AmmlqaVv4QqImmlqaVPwRqoqmlaeUPgZpoamla+UOgJppamlb+EKiJppamlT8EaqKppWnlD4GaaGppWvlDoCaaWppW/hCoiaaWppU/BGqiqaVp5Q+BmmhqaVr5Q6AmmlqaVv4QqImmlqaVPwRqoqmlaeWPUqAAdyBQkIZAQRoCBWkIFKQhUJCGQEEaAgVpCBSk0Qr08vPj+k+8u7w56L2co3LnVlzGD4YhkMovDlqB5qOnJer9LbU8HrUBgSbm6lXvz786LB/ktlsM77t/dFj89bi6/8rhxa96vd1q0eVnxa1mWTX+9a+LL6i+rvyS8XJvqR//w2H1SPznq17B4+Ph/f30y8fH4wF54x1JLAGpA705eJmfPkoXaPX0fvsyf/vkbOTw2eijqy8OR1L1srx8/p+cvX1cfcnp07xZ7krp8+hw6vEY3d/uxIDRwjrQGGIJSB3o1evjvAghaaB3HCb2q8XnmmXlx69285uvDst2608F2MOWPjdfTQU6cX/NgKmFMcRSkDrQyxdnwycjXaDl/U05jAP9tty7TgdaBJB/Wx4B9HrjDb+30vgxaQJt7q8ZMLUwhlgKUgeqvAUtN0qNUdNB2cbr4+EXR9qCNvfXDJhaGEMsBakDrY6ZHlV7ptPHiQIdHoM2DpNZ/uTw1i7+aXVwN3XY6u00+xh0eH/NgKmFUcQSkDzQYp/0Z2UZvd7fv04VaH3m2ziUC28OHh8XC3785e6tLeg/jU6WHx2G2lCNX9moPf7roDqLH95fMyCfXBhFLAHJA82Hh0/vCbFczbpuD3ifHsRlINDliOF6c9CrNoZLDXifHsRlUAgUYC4ECtIQKEhDoCANgdp893VqgxWGQE0uPt5PrbDCEKgJgaaEQCsuPv55lj04yfPrvSxb7xcf/2Iry3aqTxU3to82iluDjdvDIDgEWnGxtd6/3tvIy//ywYOTi60iw0GdYLkFPS9uXu/t3B6WVnolINCKi62dqsQyxPzds53Rx9Xnin+KRfnFw/7tYam1VwACrahaLIobZBXb1ccTgRa79/LP7WGptVcAAq0Ylzfcbd8J9OLhN3s7d4ZBcAi0ot53P+yfr9Vn7HcCvd77m4f9O8MgOARa0Zz9FNvGIr/JQOtjzUG2cXdYWumVgEArqtePNvL69aMivMlA86O6zZ27wyA4BFphvxhf7Nh5zT4BBFphlzfYbjUMnCHQCqu86oV7Ak0AgYI0BArSEChIQ6AgDYGCNAQK0hAoSPP/9AoyRm6ZhkAAAAAASUVORK5CYII=" /><!-- --></p>
+<p>Based on the results from PCA, it seems that energy, loudness,
+acousticness, valence, and lexical diversity are among the most
+important parameters in Swift’s music given that they account for the
+most variability in the data. Interestingly, in all of these boxplot
+comparisons, fountain pen songs are in the “middle” between quill and
+glitter gel pen songs. This in part explains why it is difficult to make
+a distinction between the pen types and why many fans assigned certain
+songs to the “fountain pen” category. Glitter gel pen songs tend to have
+higher measures of energy, loudness, and valence, meaning that the
+instrumental usually aligns with the mood of the lyrics. At the same
+time, quill songs have higher acousticness and TTR scores, which
+suggests that Swift’s slower and acoustic songs often have wider range
+of vocabulary as well. These different are especially highlighted by the
+music and albums in upbeat albums like <em>1989</em> versus mellow
+albums like <em>folklore</em> and <em>evermore</em>.</p>
+<h1 id="further-analysis">Further Analysis</h1>
+<h2 id="cosine-similarity-for-lyrics">Cosine Similarity for Lyrics</h2>
+<p>First, let’s see what the most popular words in each pen type
+are:</p>
+<p>We can check if the songs could be grouped by similarities in the
+frequency of words they use. We could do this by applying cosine
+similarity between all pairs of songs and choosing the most common label
+using k-Nearest Neighbors (kNN). The prior probability in each case
+(voted and balanced) will be the percentage of fountain pen songs (that
+is, if we were to label all songs as “fountain pen”).</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>find_modes <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>  unique_vals <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>  counts <span class="ot">&lt;-</span> <span class="fu">sapply</span>(unique_vals, <span class="cf">function</span>(val) <span class="fu">sum</span>(x <span class="sc">==</span> val))</span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>  mode_vals <span class="ot">&lt;-</span> unique_vals[counts <span class="sc">==</span> <span class="fu">max</span>(counts)]</span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>  <span class="fu">return</span>(mode_vals)</span>
+<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a>}</span>
+<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a>cos_sim_matrix <span class="ot">&lt;-</span> <span class="fu">textstat_simil</span>(taylorswift_dfm, taylorswift_dfm, <span class="at">method =</span> <span class="st">&quot;cosine&quot;</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" tabindex="-1"></a>cos_sim_modes_list <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="at">length =</span> <span class="fu">nrow</span>(taylorswift_dfm))</span>
+<span id="cb23-11"><a href="#cb23-11" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" tabindex="-1"></a><span class="co"># After increasing the number of neighbors,</span></span>
+<span id="cb23-13"><a href="#cb23-13" tabindex="-1"></a><span class="co"># we find that the optimal number of neighbors is 2</span></span>
+<span id="cb23-14"><a href="#cb23-14" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(taylorswift_dfm)) {</span>
+<span id="cb23-15"><a href="#cb23-15" tabindex="-1"></a>  sim_scores <span class="ot">&lt;-</span> cos_sim_matrix[i, <span class="sc">-</span>i]</span>
+<span id="cb23-16"><a href="#cb23-16" tabindex="-1"></a>  top_indices <span class="ot">&lt;-</span> <span class="fu">order</span>(sim_scores, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
+<span id="cb23-17"><a href="#cb23-17" tabindex="-1"></a>  top_pens <span class="ot">&lt;-</span> taylorswift<span class="sc">$</span>pen[top_indices] </span>
+<span id="cb23-18"><a href="#cb23-18" tabindex="-1"></a>  mode_pen <span class="ot">&lt;-</span> <span class="fu">find_modes</span>(top_pens)</span>
+<span id="cb23-19"><a href="#cb23-19" tabindex="-1"></a>  cos_sim_modes_list[[i]] <span class="ot">&lt;-</span> mode_pen</span>
+<span id="cb23-20"><a href="#cb23-20" tabindex="-1"></a>}</span>
+<span id="cb23-21"><a href="#cb23-21" tabindex="-1"></a></span>
+<span id="cb23-22"><a href="#cb23-22" tabindex="-1"></a><span class="co"># Checking performance</span></span>
+<span id="cb23-23"><a href="#cb23-23" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb23-24"><a href="#cb23-24" tabindex="-1"></a></span>
+<span id="cb23-25"><a href="#cb23-25" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(taylorswift)) {</span>
+<span id="cb23-26"><a href="#cb23-26" tabindex="-1"></a>  <span class="cf">if</span>(taylorswift<span class="sc">$</span>pen[i] <span class="sc">%in%</span> cos_sim_modes_list[[i]]) {</span>
+<span id="cb23-27"><a href="#cb23-27" tabindex="-1"></a>    p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb23-28"><a href="#cb23-28" tabindex="-1"></a>  }</span>
+<span id="cb23-29"><a href="#cb23-29" tabindex="-1"></a>  <span class="cf">if</span>(i <span class="sc">==</span> <span class="fu">nrow</span>(taylorswift)) {</span>
+<span id="cb23-30"><a href="#cb23-30" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;pen error:&quot;</span>, <span class="dv">1</span> <span class="sc">-</span> p<span class="sc">/</span><span class="fu">nrow</span>(taylorswift)))</span>
+<span id="cb23-31"><a href="#cb23-31" tabindex="-1"></a>  }</span>
+<span id="cb23-32"><a href="#cb23-32" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;pen error: 0.43859649122807&quot;</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;prior probability:&quot;</span>, <span class="fu">mean</span>(taylorswift<span class="sc">$</span>pen <span class="sc">!=</span> <span class="st">&quot;fountain pen&quot;</span>)))</span></code></pre></div>
+<pre><code>## [1] &quot;prior probability: 0.56140350877193&quot;</code></pre>
+<p>In the best case scenario, the error is somewhat lower than the prior
+probability, showing that there is a slight distinction of the songs
+across pens based on the type and frequency of the vocabulary they
+use.</p>
+<h2 id="cosine-similarity-for-lyric-sentiments">Cosine Similarity for
+Lyric Sentiments</h2>
+<p>We are going to use a similar approach as in the previous section to
+perform sentiment analysis on the lyrics.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>ts_sentiment_detailed <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>(<span class="fu">get_nrc_sentiment</span>(taylorswift<span class="sc">$</span>lyrics))</span></code></pre></div>
+<p>Before that, we will plot the distributions of sentiments across
+pens:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>fountain_pen_ind <span class="ot">&lt;-</span> <span class="fu">which</span>(taylorswift<span class="sc">$</span>pen <span class="sc">==</span> <span class="st">&quot;fountain pen&quot;</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>glitter_gel_pen_ind <span class="ot">&lt;-</span> <span class="fu">which</span>(taylorswift<span class="sc">$</span>pen <span class="sc">==</span> <span class="st">&quot;glitter gel pen&quot;</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>quill_ind <span class="ot">&lt;-</span> <span class="fu">which</span>(taylorswift<span class="sc">$</span>pen <span class="sc">==</span> <span class="st">&quot;quill&quot;</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>fountain_pen_sentiments <span class="ot">&lt;-</span> ts_sentiment_detailed[fountain_pen_ind, ]</span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>glitter_gel_pen_sentiments <span class="ot">&lt;-</span> ts_sentiment_detailed[glitter_gel_pen_ind, ]</span>
+<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a>quill_sentiments <span class="ot">&lt;-</span> ts_sentiment_detailed[quill_ind, ]</span>
+<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" tabindex="-1"></a>fountain_pen_agg <span class="ot">&lt;-</span> <span class="fu">colSums</span>(fountain_pen_sentiments)</span>
+<span id="cb28-10"><a href="#cb28-10" tabindex="-1"></a>glitter_gel_pen_agg <span class="ot">&lt;-</span> <span class="fu">colSums</span>(glitter_gel_pen_sentiments)</span>
+<span id="cb28-11"><a href="#cb28-11" tabindex="-1"></a>quill_agg <span class="ot">&lt;-</span> <span class="fu">colSums</span>(quill_sentiments)</span>
+<span id="cb28-12"><a href="#cb28-12" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="#cb28-13" tabindex="-1"></a>fountain_pen_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sentiment =</span> <span class="fu">names</span>(fountain_pen_agg), <span class="at">Total_Score =</span> fountain_pen_agg)</span>
+<span id="cb28-14"><a href="#cb28-14" tabindex="-1"></a>glitter_gel_pen_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sentiment =</span> <span class="fu">names</span>(glitter_gel_pen_agg), <span class="at">Total_Score =</span> glitter_gel_pen_agg)</span>
+<span id="cb28-15"><a href="#cb28-15" tabindex="-1"></a>quill_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sentiment =</span> <span class="fu">names</span>(quill_agg), <span class="at">Total_Score =</span> quill_agg)</span>
+<span id="cb28-16"><a href="#cb28-16" tabindex="-1"></a></span>
+<span id="cb28-17"><a href="#cb28-17" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(fountain_pen_df, <span class="fu">aes</span>(<span class="at">x =</span> Sentiment, <span class="at">y =</span> Total_Score)) <span class="sc">+</span></span>
+<span id="cb28-18"><a href="#cb28-18" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-19"><a href="#cb28-19" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sentiment Scores for Fountain Pen Songs&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Sentiment&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Score&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-20"><a href="#cb28-20" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb28-21"><a href="#cb28-21" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb28-22"><a href="#cb28-22" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)  <span class="co"># Center the title</span></span>
+<span id="cb28-23"><a href="#cb28-23" tabindex="-1"></a>  )</span>
+<span id="cb28-24"><a href="#cb28-24" tabindex="-1"></a></span>
+<span id="cb28-25"><a href="#cb28-25" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(glitter_gel_pen_df, <span class="fu">aes</span>(<span class="at">x =</span> Sentiment, <span class="at">y =</span> Total_Score)) <span class="sc">+</span></span>
+<span id="cb28-26"><a href="#cb28-26" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;pink&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-27"><a href="#cb28-27" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sentiment Scores for Glitter Gel Pen Songs&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Sentiment&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Score&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-28"><a href="#cb28-28" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb28-29"><a href="#cb28-29" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb28-30"><a href="#cb28-30" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)  <span class="co"># Center the title</span></span>
+<span id="cb28-31"><a href="#cb28-31" tabindex="-1"></a>  )</span>
+<span id="cb28-32"><a href="#cb28-32" tabindex="-1"></a></span>
+<span id="cb28-33"><a href="#cb28-33" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(quill_df, <span class="fu">aes</span>(<span class="at">x =</span> Sentiment, <span class="at">y =</span> Total_Score)) <span class="sc">+</span></span>
+<span id="cb28-34"><a href="#cb28-34" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;brown&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-35"><a href="#cb28-35" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sentiment Scores for Quill Songs&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Sentiment&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Total Score&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-36"><a href="#cb28-36" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb28-37"><a href="#cb28-37" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb28-38"><a href="#cb28-38" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)  <span class="co"># Center the title</span></span>
+<span id="cb28-39"><a href="#cb28-39" tabindex="-1"></a>  )</span>
+<span id="cb28-40"><a href="#cb28-40" tabindex="-1"></a></span>
+<span id="cb28-41"><a href="#cb28-41" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, p3, <span class="at">ncol =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>It is difficult to compare the three distributions because the number
+of songs in each pen type is different. However, we can notice that all
+three categories have approximately equal number of “negative” and
+“positive” songs, with only quill songs being on average slightly more
+negative than positive. The composition is sentiments is similar across
+pen types, with joy, anticipation, and trust being at the lead, followed
+by sadness and fear, and anger, disgust, and surprise at the bottom. It
+is evident that rather than having one or two predominating emotions,
+Swift’s songs tend to employ a variety of sentiments not only in terms
+of her entire discography but also across all pen types. Therefore, pen
+types are not necessarily divided on the basis of sentiments only;
+instead, as seen above as well as in further detail below, they are
+influenced by the intricate ways in which the lyrics and underlying
+melodies are constructed.</p>
+<p>We can proceed with the cosine similarity and kNN regression methods,
+which will inform us about the extent to which the songs from the same
+pen type can be categorized by similarities across their sentiment
+scores.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>ts_sentiment_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">nrow =</span> <span class="dv">171</span>, <span class="at">ncol =</span> <span class="dv">171</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">171</span>) {</span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">171</span>) {</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>    ts_sentiment_matrix[i, j] <span class="ot">&lt;-</span>  </span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>      <span class="fu">suppressWarnings</span>(<span class="fu">acos</span>(<span class="fu">sum</span>(ts_sentiment_detailed[i, ]<span class="sc">*</span>ts_sentiment_detailed[j, ]) <span class="sc">/</span> </span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>             (<span class="fu">sqrt</span>(<span class="fu">sum</span>(ts_sentiment_detailed[i, ]<span class="sc">*</span>ts_sentiment_detailed[i, ])) <span class="sc">*</span> </span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a>              <span class="fu">sqrt</span>(<span class="fu">sum</span>(ts_sentiment_detailed[j, ]<span class="sc">*</span>ts_sentiment_detailed[j, ])))))</span>
+<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a>  }</span>
+<span id="cb29-10"><a href="#cb29-10" tabindex="-1"></a>}</span>
+<span id="cb29-11"><a href="#cb29-11" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" tabindex="-1"></a>ts_sentiment_matrix[<span class="fu">which</span>(<span class="fu">is.nan</span>(ts_sentiment_matrix), <span class="at">arr.ind =</span> <span class="cn">TRUE</span>)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb29-13"><a href="#cb29-13" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="#cb29-14" tabindex="-1"></a>sent_modes_list <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="at">length =</span> <span class="fu">nrow</span>(ts_sentiment_detailed))</span>
+<span id="cb29-15"><a href="#cb29-15" tabindex="-1"></a></span>
+<span id="cb29-16"><a href="#cb29-16" tabindex="-1"></a><span class="co"># Again the optimal number of neighbors is 2</span></span>
+<span id="cb29-17"><a href="#cb29-17" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(ts_sentiment_detailed)) {</span>
+<span id="cb29-18"><a href="#cb29-18" tabindex="-1"></a>  sim_scores <span class="ot">&lt;-</span> ts_sentiment_matrix[i, <span class="sc">-</span>i]</span>
+<span id="cb29-19"><a href="#cb29-19" tabindex="-1"></a>  top_indices <span class="ot">&lt;-</span> <span class="fu">order</span>(sim_scores, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
+<span id="cb29-20"><a href="#cb29-20" tabindex="-1"></a>  top_pens <span class="ot">&lt;-</span> taylorswift<span class="sc">$</span>pen[top_indices] </span>
+<span id="cb29-21"><a href="#cb29-21" tabindex="-1"></a>  mode_pen <span class="ot">&lt;-</span> <span class="fu">find_modes</span>(top_pens)</span>
+<span id="cb29-22"><a href="#cb29-22" tabindex="-1"></a>  sent_modes_list[[i]] <span class="ot">&lt;-</span> mode_pen</span>
+<span id="cb29-23"><a href="#cb29-23" tabindex="-1"></a>}</span>
+<span id="cb29-24"><a href="#cb29-24" tabindex="-1"></a></span>
+<span id="cb29-25"><a href="#cb29-25" tabindex="-1"></a><span class="co"># Checking performance</span></span>
+<span id="cb29-26"><a href="#cb29-26" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb29-27"><a href="#cb29-27" tabindex="-1"></a></span>
+<span id="cb29-28"><a href="#cb29-28" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(taylorswift)) {</span>
+<span id="cb29-29"><a href="#cb29-29" tabindex="-1"></a>  <span class="cf">if</span>(taylorswift<span class="sc">$</span>pen[i] <span class="sc">%in%</span> sent_modes_list[[i]]) {</span>
+<span id="cb29-30"><a href="#cb29-30" tabindex="-1"></a>    p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb29-31"><a href="#cb29-31" tabindex="-1"></a>  }</span>
+<span id="cb29-32"><a href="#cb29-32" tabindex="-1"></a>  <span class="cf">if</span>(i <span class="sc">==</span> <span class="fu">nrow</span>(taylorswift)) {</span>
+<span id="cb29-33"><a href="#cb29-33" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;pen error:&quot;</span>, <span class="dv">1</span> <span class="sc">-</span> p<span class="sc">/</span><span class="fu">nrow</span>(taylorswift)))</span>
+<span id="cb29-34"><a href="#cb29-34" tabindex="-1"></a>  }</span>
+<span id="cb29-35"><a href="#cb29-35" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;pen error: 0.327485380116959&quot;</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;prior probability:&quot;</span>, <span class="fu">mean</span>(taylorswift<span class="sc">$</span>pen <span class="sc">!=</span> <span class="st">&quot;fountain pen&quot;</span>)))</span></code></pre></div>
+<pre><code>## [1] &quot;prior probability: 0.56140350877193&quot;</code></pre>
+<p>The error rate is much lower than the prior probability and this
+method seems to improve on the results from the word frequency
+comparison. Of course, this approach is by no means perfect, especially
+since almost every third song is missclassified.</p>
+<h2 id="decision-trees">Decision Trees</h2>
+<p>Finally, we are going to utilize classification decision trees, as
+they are fairly easy to interpret and are able to take multiple
+predictors into account. In this case, we do not need to prune the tree,
+as we want to be as detailed as possible about the distinctions between
+the pens.</p>
+<h3 id="visualizing-the-tree">Visualizing the tree</h3>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a>taylorswift_cont <span class="ot">&lt;-</span> <span class="fu">cbind</span>(taylorswift<span class="sc">$</span>pen, taylorswift_cont[, <span class="dv">1</span><span class="sc">:</span><span class="dv">14</span>])</span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="fu">colnames</span>(taylorswift_cont)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;pen&quot;</span></span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>tree <span class="ot">&lt;-</span> <span class="fu">tree</span>(<span class="fu">as.factor</span>(pen) <span class="sc">~</span> ., <span class="at">data =</span> taylorswift_cont)</span>
+<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>), <span class="at">cex =</span> <span class="fl">0.60</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a><span class="fu">plot</span>(tree)</span>
+<span id="cb33-6"><a href="#cb33-6" tabindex="-1"></a><span class="fu">text</span>(tree, <span class="at">pretty =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>In this tree diagram each split partitions the songs into smaller
+sets until a label (in this case, a pen type) is returned. The left
+branch follows the rule described by the internal node while the right
+branch follows the opposite rule. For example, the branch to the left of
+“acousticness &lt; 0.4865” describes songs with acousticness that is
+below 0.4865 while the branch to the right describes songs whose
+acousticness exceeds 0.4865. We can, for example, deduce that a song
+whose acousticness is less than 0.4865 and speechiness is less than
+0.0276 is classified as “fountain pen.” In general, though, it is clear
+that this diagram is very convoluted and requires multiple predictors to
+classify the songs.</p>
+<p>We are now going to create the confusion matrix for pen types to see
+where the algorithm made the most errors. We will also print the total
+error rate.</p>
+<h3 id="printing-the-confusion-matrix">Printing the confusion
+matrix</h3>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a>get_max_column_names <span class="ot">&lt;-</span> <span class="cf">function</span>(row) {</span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a>  max_index <span class="ot">&lt;-</span> <span class="fu">which.max</span>(row)</span>
+<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a>  <span class="fu">colnames</span>(<span class="fu">predict</span>(tree, taylorswift_cont))[max_index]</span>
+<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a>}</span>
+<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">apply</span>(<span class="fu">predict</span>(tree, taylorswift_cont), <span class="dv">1</span>, get_max_column_names), taylorswift<span class="sc">$</span>pen)</span></code></pre></div>
+<pre><code>##                  
+##                   fountain pen glitter gel pen quill
+##   fountain pen              70               7     9
+##   glitter gel pen            2              45     1
+##   quill                      3               3    31</code></pre>
+<h3 id="obtaining-the-error-rate">Obtaining the error rate</h3>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;pen error:&quot;</span>, </span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a>            <span class="fu">mean</span>(<span class="fu">apply</span>(<span class="fu">predict</span>(tree, taylorswift_cont), <span class="dv">1</span>, get_max_column_names) <span class="sc">!=</span> taylorswift<span class="sc">$</span>pen)))</span></code></pre></div>
+<pre><code>## [1] &quot;pen error: 0.146198830409357&quot;</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;prior probability:&quot;</span>, <span class="fu">mean</span>(taylorswift<span class="sc">$</span>pen <span class="sc">!=</span> <span class="st">&quot;fountain pen&quot;</span>)))</span></code></pre></div>
+<pre><code>## [1] &quot;prior probability: 0.56140350877193&quot;</code></pre>
+<p>This is by far the best algorithm of all that were applied in this
+project, with an error rate of less than 15%. Although this error rate
+is still somewhat high, we can notice that most of the songs that were
+missclassified were fountain pen songs as glitter gel pen or quill
+songs. This is not surprising given that the fans originally assigned
+more songs to the “fountain pen” group. Thus the decision tree method
+performs relatively well, though it could be certainly improved with
+more advanced methods or more elaborate data.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>To summarize, we explored a number of ways to analyze Taylor Swift’s
+music and were able, to some extent, quantify the pen types that she
+uses in her writing process. It would be interesting to consider how
+these models can be further improved and if they could be applied well
+to Swift’s future releases.</p>
+
+</body>
+</html>
