@@ -1,0 +1,478 @@
+---
+title: "Quantifying Taylor Swift's Pen-Themed Songwriting Approach"
+author: "Valeri Vankov"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+During her [acceptance speech](https://www.youtube.com/watch?v=lIrHts62ACQ&t=122s) for the Innovator Award at the 2023 iHeartRadio Music Awards, Taylor Swift stated that people in any industry often look for a precedent or data that shows that an idea is good or feasible; that is, an example of something working before. However, she believes that the "the coolest ideas or moves or choices are the new ones, the ones that set a new precedent."
+
+Inspired by this statement as well as my observations of Swift's impact on music and popular culture, I decided to take a deep dive into her past work and use various inferential approaches to uncover potentially interesting patterns. In this analysis, I am using the [audio features](https://developer.spotify.com/documentation/web-api/reference/get-audio-features) data from her official Spotify account as well as the lyrics of her songs according to Genius. To narrow down the scope of the analysis, I am only considering her 10 original studio albums, along with the deluxe tracks, but excluding any alternative versions (acoustic versions, demos, live performances, etc.). The goals of the project are broad, but in general I am interested in gaining insight from her lyrics and building a classifier for what Swift has described as three pen types for her writing process (quill, fountain pen, glitter gel pen). More about these definitions can be found in [this](https://www.hollywoodreporter.com/news/music-news/taylor-swift-songwriting-process-nashville-speech-1235224700/) article by *The Hollywood Reporter*.
+
+Previous efforts have been done to examine Swift's discography using various data-driven approaches. Thus, my hope is to expand on such type of research by applying some of the methods to her most up-to-date discography and contribute with useful information, especially in the area of Swift's pen-themed approach to songwriting. Given that the said approach is not officially recognized and is rather based on loose definitions that are unique to Swift's craft, it is intriguing to explore how Swift's pen style is applied to her music and if it could be explained in more commonly accepted terms.
+
+It should be acknowledged that this research is limited in many ways. From the features to the methods I have selected, the project can hardly touch upon all of the aural and lyrical complexities that differentiate Swift from other musical acts. Moreover, this analysis treats Swift's music in isolation from her status as a pop sensation and does not consider how her media presence might impact the nature of her work. Nevertheless, the analysis presented below is a good starting point to a greater endeavor of learning about the specifics of Taylor Swift's music.
+
+# Data Collection and Cleaning
+
+First, we are going to gather and preprocess the data that we will need for our analysis. The full code can be found below.
+
+### Scrape Taylor Swift's Spotify data
+
+```{r, warning = FALSE}
+suppressWarnings(library(dplyr))
+suppressWarnings(library(ggplot2))
+suppressWarnings(library(spotifyr))
+suppressWarnings(library(rvest))
+suppressWarnings(library(quanteda))
+suppressWarnings(library(quanteda.corpora))
+suppressWarnings(library(quanteda.textplots))
+suppressWarnings(library(quanteda.textstats))
+suppressWarnings(library(readtext))
+suppressWarnings(library(syuzhet))
+suppressWarnings(library(FactoMineR))
+suppressWarnings(library(proxy))
+suppressWarnings(library(stats))
+suppressWarnings(library(tidyverse))
+suppressWarnings(library(nnet))
+suppressWarnings(library(tree))
+suppressWarnings(library(gridExtra))
+
+Sys.setenv(SPOTIFY_CLIENT_ID = "1a4b9b996ce44425beea7a5cd8b9c4ff")
+Sys.setenv(SPOTIFY_CLIENT_SECRET = "1e1d17e585324ac5a348cdff27ff0a83")
+access_token <- get_spotify_access_token()
+ts <- get_artist_audio_features("06HL4z0CvFAxyc27GXpf02")
+ts <- apply(ts, 2, as.character)
+```
+
+### Convert ts to data frame and remove row name
+
+```{r}
+ts <- data.frame(ts)
+row.names(ts) <- NULL
+```
+
+### Keep only relevant columns
+
+```{r}
+ts <- ts[, c("track_name", "album_name", "album_release_date", "album_release_year", "danceability", "energy", "key", "loudness", "mode",	"speechiness", "acousticness", "instrumentalness", "liveness", "valence", "tempo", "time_signature", "duration_ms", "explicit", "key_name", "mode_name", "key_mode")]
+```
+
+### Select all unique songs from the original studio albums
+
+This selection captures a clean presentation of Swift's discography, thereby excluding only live performances, alternative versions (e.g. remixes, demos, etc.), previously unreleased songs (also known as "vault tracks") as well as songs that were not part of any of her studio albums (e.g. "I Don’t Wanna Live Forever").
+
+First, an initial filtering will be done by selecting the most complete versions of each album, as shown below: 
+
+```{r}
+taylorswift <- ts[ts$album_name %in% 
+                    c("Midnights (The Til Dawn Edition)", "evermore (deluxe version)", 
+                      "folklore (deluxe version)", "Lover", "reputation", 
+                      "1989 (Deluxe Edition)", "Red (Deluxe Edition)", 
+                      "Speak Now (Deluxe Edition)", "Fearless Platinum Edition", 
+                      "Taylor Swift"), ]
+```
+
+The duplicate tracks will be now removed from each album:
+
+```{r}
+# Remove "Snow On The Beach (feat. More Lana Del Rey)"
+# and "Karma (feat. Ice Spice)" from "Midnights"
+taylorswift <- taylorswift[-c(22, 23), ]
+# Remove the voice memos from "1989"
+taylorswift <- taylorswift[-c(105, 106, 107), ]
+# Remove original demo recordings and
+# "State Of Grace - Acoustic" from "Red"
+taylorswift <- taylorswift[-c(124, 125, 126), ]
+# Remove acoustic and alternative versions
+# of "Mine," "Back to December," and "Haunted"
+taylorswift <- taylorswift[-c(141, 142, 143), ]
+# Remove "Forever & Always - Piano Version" from "Fearless"
+taylorswift <- taylorswift[-143, ]
+# Remove "Teardrops on My Guitar - Pop Version" from "Taylor Swift"
+taylorswift <- taylorswift[-173, ]
+```
+
+Even though some of these songs are part of the deluxe versions of the albums, the album names will be shortened for convenience so as to represent the "musical era" that a track belongs to.
+
+```{r}
+taylorswift[taylorswift$album_name == "Midnights (The Til Dawn Edition)", ]$album_name <- "Midnights"
+taylorswift[taylorswift$album_name == "evermore (deluxe version)", ]$album_name <- "evermore"
+taylorswift[taylorswift$album_name == "folklore (deluxe version)", ]$album_name <- "folklore"
+taylorswift[taylorswift$album_name == "1989 (Deluxe Edition)", ]$album_name <- "1989"
+taylorswift[taylorswift$album_name == "Red (Deluxe Edition)", ]$album_name <- "Red"
+taylorswift[taylorswift$album_name == "Speak Now (Deluxe Edition)", ]$album_name <- "Speak Now"
+taylorswift[taylorswift$album_name == "Fearless Platinum Edition", ]$album_name <- "Fearless"
+```
+
+### Extract the lyrics for each song
+
+The lyrics for the tracks in `taylorswift` will be used as another field to characterize Swift"s discography.
+
+```{r}
+taylorswift$lyrics <- read.csv("R/Taylor_Swift_Genius_Data.csv")$Lyrics
+taylorswift$lyrics <- gsub("\n", " ", taylorswift$lyrics)
+taylorswift$lyrics <- iconv(taylorswift$lyrics, "utf-8", "ascii", sub="")
+```
+
+### Remove "Untouchable" since it is a cover
+
+```{r}
+taylorswift <- taylorswift[-which(taylorswift$track_name == "Untouchable"), ]
+```
+
+### Clear the row names and make the quantitative variables numeric
+
+```{r}
+row.names(taylorswift) <- NULL
+for(i in 5:17) {
+  taylorswift[, i] <- as.numeric(taylorswift[, i])
+}
+```
+
+### Add pen types
+
+This classification is based on the results of a [poll](https://www.reddit.com/r/TaylorSwift/comments/xoc8qm/results_playlists_quill_fountain_pen_or_glitter/) that was responsed by around 500 Taylor Swift fans (also known as "Swifties"). Given the disproportionate amount of songs that the fans classified as "fountain pen" compared to "quill" and "glitter gel pen," the creators of the poll decided to create their own Spotify playlists which allocate some of the fountain pen songs to the other two categories:
+
+```{r}
+taylorswift$pen <- rep(NA, nrow(taylorswift))
+
+# fountain pen songs
+fountain_pen <- get_playlist_tracks("1Yf6Seg9lzZU4sqxqfekBw")$track.name
+fountain_pen <- trimws(gsub("\\(Taylor’s Version\\)|\\(Taylor's Version\\)", "", fountain_pen))
+fountain_pen[2] <- "Teardrops On My Guitar - Radio Single Remix"
+fountain_pen[31] <- "The Last Time"
+fountain_pen[33] <- "Everything Has Changed"
+# quill songs
+quill <- get_playlist_tracks("6MGHHVP4yRFChABnQTHS9Q")$track.name
+quill <- trimws(gsub("\\(Taylor’s Version\\)|\\(Taylor's Version\\)", "", quill))
+# glitter gel pen songs
+glitter_gel_pen <- get_playlist_tracks("1IFexfQzNRySsZwlYfpR2v")$track.name
+glitter_gel_pen <- trimws(gsub("\\(Taylor’s Version\\)|\\(Taylor's Version\\)", "", glitter_gel_pen))
+glitter_gel_pen[16] <- "I Knew You Were Trouble."
+
+taylorswift[taylorswift$track_name %in% fountain_pen, ]$pen <- "fountain pen"
+taylorswift[taylorswift$track_name %in% quill, ]$pen <- "quill"
+taylorswift[taylorswift$track_name %in% glitter_gel_pen, ]$pen <- "glitter gel pen"
+
+taylorswift[taylorswift$track_name %in% c("Never Grow Up", "SuperStar", "Breathe", "You're Not Sorry", "Stay Beautiful", "I'm Only Me When I'm With You", "Invisible", "A Perfectly Good Heart"), ]$pen <- "fountain pen"
+taylorswift[taylorswift$track_name == "Hits Different", ]$pen <- "glitter gel pen"
+```
+
+As shown by the tables below, there are 75 fountain pen, 55 glitter gel pen, and 41 quill tracks, which comprise approximately 44\%, 32\%, and 24\% of Swift's discography.
+
+```{r}
+table(taylorswift$pen)
+table(taylorswift$pen)/nrow(taylorswift)
+```
+
+# Exploratory Data Analysis
+
+First, we are going to display the distributions of pen types across albums:
+
+```{r, warning = FALSE}
+pen_distribution <- taylorswift %>% 
+  group_by(album_name, pen) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  group_by(album_name) %>%
+  mutate(sum = sum(count)) %>%
+  mutate(percentage = (count / sum(count)) * 100)
+
+pen_distribution <- pen_distribution[
+  order(match(pen_distribution$album_name, rep(unique(taylorswift$album_name), each = 3))), ]
+
+pen_distribution$album_name <- factor(
+  pen_distribution$album_name, 
+  levels = rev(unique(pen_distribution$album_name)))
+
+ggplot(pen_distribution, 
+       aes(x = album_name, 
+           y = percentage, fill = pen)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Pen Types by Album",
+       x = "Album Name",
+       y = "Percentage") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.title = element_text(hjust = 0.5)) + 
+  scale_fill_manual(values = c("fountain pen" = "lightblue", "glitter gel pen" = "pink", "quill" = "brown")) +
+  guides(fill = guide_legend(title = "Pen Types")) +
+  ylim(0, 100) +
+  scale_y_continuous(breaks = seq(0, 100, by = 10)) +
+  coord_flip()
+```
+
+There are a number of trends that could be observed from this mosaic plot. The percentage of fountain pen songs decreased after *Red* while the the percentage of quill tracks increased, reaching a noticeable peak during the *folklore* and *evermore* era. The percentage of glitter gel pen songs across albums is relatively consistent, with *Midnights* and *1989* having the highest percentage of glitter gel pen songs while *folklore* and *evermore*, followed by *Speak Now*, have the lowest percentage of such tracks. In other words, fountain pen songs predominated Swift's country era; glitter gel pen songs were the most popular throughout her pop eras; and quill songs were the most frequent in her indie eras. Thus, her songwriting approach is strongly dependent on the album and genre she is working with.
+
+Next, we are going to create boxplots for the distributions of each of the pen types using the variables that cause the highest variability in the data. This can be done using principal components analysis (PCA). Before that, we are going to include two more categories: lexical diversity and sentiment score. To add those, we need to convert the dataset to a document-feature matrix.
+
+```{r}
+# Creating corpus
+taylorswift_corpus <- corpus(taylorswift, text_field = "lyrics")
+# Creating tokens
+taylorswift_tokens <- tokens(taylorswift_corpus, remove_punct = TRUE)
+# Creating document-feature matrix
+taylorswift_dfm <- dfm(taylorswift_tokens)
+# Removing English stopwords
+taylorswift_dfm <- dfm_remove(taylorswift_dfm, pattern = stopwords("en"))
+# Converting the words to their word stems
+taylorswift_dfm <- dfm_wordstem(taylorswift_dfm)
+```
+
+Now we can add lexical diversity by calculating the type-token ratio (TTR) for the lyrics of each track.
+
+```{r}
+taylorswift$ttr <- textstat_lexdiv(taylorswift_dfm, "TTR")[, 2]
+```
+
+We also add the sentiment score, whose value is above 0 if the overall sentiment of the lyrics is positive and below 0 if the sentiment is negative. In later sections we will conduct a more in-depth sentiment analysis.
+
+```{r}
+taylorswift$sentiment <- round(get_sentiment(taylorswift$lyrics), 2)
+```
+
+Having these features as well, we are going to use PCA to see which ones account for the most variability in the dataset:
+
+```{r}
+# Subsetting the continuous features
+taylorswift_cont <- taylorswift[, c(5, 6, 8:15, 17, 18, 24, 25)]
+# Label encoding "explicit" as 0 or 1
+taylorswift_cont$explicit <- ifelse(taylorswift_cont$explicit == "TRUE", 1, 0)
+# One-hot encoding for "key_name"
+taylorswift_cont <- cbind(taylorswift_cont, as.data.frame(model.matrix(~0 + taylorswift[, "key_name"])))
+# Scaling the data
+taylorswift_cont_scaled <- scale(taylorswift_cont)
+# Applying PCA
+taylorswift_cont_pca <- PCA(taylorswift_cont_scaled, graph = FALSE)
+
+# Retrieving top 10 features
+taylorswift_cont_pca$var$coord[, 1][order(abs(taylorswift_cont_pca$var$coord[, 1]), decreasing = TRUE)][1:10]
+```
+
+We are going to create plots for the top 5 features.
+
+```{r}
+taylorswift_pca_vars <- names(taylorswift_cont_pca$var$coord[, 1][
+  order(abs(taylorswift_cont_pca$var$coord[, 1]), decreasing = TRUE)])[1:5]
+
+plot_list <- list()
+
+for (var in taylorswift_pca_vars) {
+  p <- ggplot(taylorswift, aes(x = factor(pen, levels = c("quill", "fountain pen", "glitter gel pen")), 
+                              y = .data[[var]], fill = pen)) +
+    geom_boxplot() +
+    scale_fill_manual(values = c("fountain pen" = "lightblue", "glitter gel pen" = "pink", "quill" = "brown")) +
+    labs(
+      title = paste("Boxplot of", var),
+      x = "pen type",
+      y = var
+    ) +
+    theme_minimal() +
+    theme(
+      plot.title = element_text(size = 16, hjust = 0.5, vjust = 0.5)
+    )
+  
+  plot_list[[var]] <- p
+  print(p)
+}
+```
+
+Based on the results from PCA, it seems that energy, loudness, acousticness, valence, and lexical diversity are among the most important parameters in Swift's music given that they account for the most variability in the data. Interestingly, in all of these boxplot comparisons, fountain pen songs are in the "middle" between quill and glitter gel pen songs. This in part explains why it is difficult to make a distinction between the pen types and why many fans assigned certain songs to the "fountain pen" category. Glitter gel pen songs tend to have higher measures of energy, loudness, and valence, meaning that the instrumental usually aligns with the mood of the lyrics. At the same time, quill songs have higher acousticness and TTR scores, which suggests that Swift's slower and acoustic songs often have wider range of vocabulary as well. These different are especially highlighted by the music and albums in upbeat albums like *1989* versus mellow albums like *folklore* and *evermore*.
+
+# Further Analysis
+
+## Cosine Similarity for Lyrics
+
+First, let's see what the most popular words in each pen type are:
+
+We can check if the songs could be grouped by similarities in the frequency of words they use. We could do this by applying cosine similarity between all pairs of songs and choosing the most common label using k-Nearest Neighbors (kNN). The prior probability in each case (voted and balanced) will be the percentage of fountain pen songs (that is, if we were to label all songs as "fountain pen").
+
+```{r}
+find_modes <- function(x) {
+  unique_vals <- unique(x)
+  counts <- sapply(unique_vals, function(val) sum(x == val))
+  mode_vals <- unique_vals[counts == max(counts)]
+  return(mode_vals)
+}
+
+
+cos_sim_matrix <- textstat_simil(taylorswift_dfm, taylorswift_dfm, method = "cosine")
+cos_sim_modes_list <- vector("list", length = nrow(taylorswift_dfm))
+
+# After increasing the number of neighbors,
+# we find that the optimal number of neighbors is 2
+for (i in 1:nrow(taylorswift_dfm)) {
+  sim_scores <- cos_sim_matrix[i, -i]
+  top_indices <- order(sim_scores, decreasing = TRUE)[1:2]
+  top_pens <- taylorswift$pen[top_indices] 
+  mode_pen <- find_modes(top_pens)
+  cos_sim_modes_list[[i]] <- mode_pen
+}
+
+# Checking performance
+p <- 0
+
+for(i in 1:nrow(taylorswift)) {
+  if(taylorswift$pen[i] %in% cos_sim_modes_list[[i]]) {
+    p <- p + 1
+  }
+  if(i == nrow(taylorswift)) {
+    print(paste("pen error:", 1 - p/nrow(taylorswift)))
+  }
+}
+
+print(paste("prior probability:", mean(taylorswift$pen != "fountain pen")))
+```
+
+In the best case scenario, the error is somewhat lower than the prior probability, showing that there is a slight distinction of the songs across pens based on the type and frequency of the vocabulary they use.
+
+## Cosine Similarity for Lyric Sentiments
+
+We are going to use a similar approach as in the previous section to perform sentiment analysis on the lyrics.
+
+```{r, warning = FALSE}
+ts_sentiment_detailed <- suppressWarnings(get_nrc_sentiment(taylorswift$lyrics))
+```
+
+Before that, we will plot the distributions of sentiments across pens:
+
+```{r}
+fountain_pen_ind <- which(taylorswift$pen == "fountain pen")
+glitter_gel_pen_ind <- which(taylorswift$pen == "glitter gel pen")
+quill_ind <- which(taylorswift$pen == "quill")
+
+fountain_pen_sentiments <- ts_sentiment_detailed[fountain_pen_ind, ]
+glitter_gel_pen_sentiments <- ts_sentiment_detailed[glitter_gel_pen_ind, ]
+quill_sentiments <- ts_sentiment_detailed[quill_ind, ]
+
+fountain_pen_agg <- colSums(fountain_pen_sentiments)
+glitter_gel_pen_agg <- colSums(glitter_gel_pen_sentiments)
+quill_agg <- colSums(quill_sentiments)
+
+fountain_pen_df <- data.frame(Sentiment = names(fountain_pen_agg), Total_Score = fountain_pen_agg)
+glitter_gel_pen_df <- data.frame(Sentiment = names(glitter_gel_pen_agg), Total_Score = glitter_gel_pen_agg)
+quill_df <- data.frame(Sentiment = names(quill_agg), Total_Score = quill_agg)
+
+p1 <- ggplot(fountain_pen_df, aes(x = Sentiment, y = Total_Score)) +
+  geom_bar(stat = "identity", fill = "lightblue") +
+  labs(title = "Sentiment Scores for Fountain Pen Songs", x = "Sentiment", y = "Total Score") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, hjust = 0.5)  # Center the title
+  )
+
+p2 <- ggplot(glitter_gel_pen_df, aes(x = Sentiment, y = Total_Score)) +
+  geom_bar(stat = "identity", fill = "pink") +
+  labs(title = "Sentiment Scores for Glitter Gel Pen Songs", x = "Sentiment", y = "Total Score") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, hjust = 0.5)  # Center the title
+  )
+
+p3 <- ggplot(quill_df, aes(x = Sentiment, y = Total_Score)) +
+  geom_bar(stat = "identity", fill = "brown") +
+  labs(title = "Sentiment Scores for Quill Songs", x = "Sentiment", y = "Total Score") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, hjust = 0.5)  # Center the title
+  )
+
+grid.arrange(p1, p2, p3, ncol = 1)
+```
+
+It is difficult to compare the three distributions because the number of songs in each pen type is different. However, we can notice that all three categories have approximately equal number of "negative" and "positive" songs, with only quill songs being on average slightly more negative than positive. The composition is sentiments is similar across pen types, with joy, anticipation, and trust being at the lead, followed by sadness and fear, and anger, disgust, and surprise at the bottom. It is evident that rather than having one or two predominating emotions, Swift's songs tend to employ a variety of sentiments not only in terms of her entire discography but also across all pen types. Therefore, pen types are not necessarily divided on the basis of sentiments only; instead, as seen above as well as in further detail below, they are influenced by the intricate ways in which the lyrics and underlying melodies are constructed.
+
+We can proceed with the cosine similarity and kNN regression methods, which will inform us about the extent to which the songs from the same pen type can be categorized by similarities across their sentiment scores. 
+
+```{r, warning = FALSE}
+ts_sentiment_matrix <- matrix(nrow = 171, ncol = 171)
+
+for(i in 1:171) {
+  for(j in 1:171) {
+    ts_sentiment_matrix[i, j] <-  
+      suppressWarnings(acos(sum(ts_sentiment_detailed[i, ]*ts_sentiment_detailed[j, ]) / 
+             (sqrt(sum(ts_sentiment_detailed[i, ]*ts_sentiment_detailed[i, ])) * 
+              sqrt(sum(ts_sentiment_detailed[j, ]*ts_sentiment_detailed[j, ])))))
+  }
+}
+
+ts_sentiment_matrix[which(is.nan(ts_sentiment_matrix), arr.ind = TRUE)] <- 0
+
+sent_modes_list <- vector("list", length = nrow(ts_sentiment_detailed))
+
+# Again the optimal number of neighbors is 2
+for (i in 1:nrow(ts_sentiment_detailed)) {
+  sim_scores <- ts_sentiment_matrix[i, -i]
+  top_indices <- order(sim_scores, decreasing = TRUE)[1:2]
+  top_pens <- taylorswift$pen[top_indices] 
+  mode_pen <- find_modes(top_pens)
+  sent_modes_list[[i]] <- mode_pen
+}
+
+# Checking performance
+p <- 0
+
+for(i in 1:nrow(taylorswift)) {
+  if(taylorswift$pen[i] %in% sent_modes_list[[i]]) {
+    p <- p + 1
+  }
+  if(i == nrow(taylorswift)) {
+    print(paste("pen error:", 1 - p/nrow(taylorswift)))
+  }
+}
+
+print(paste("prior probability:", mean(taylorswift$pen != "fountain pen")))
+```
+
+The error rate is much lower than the prior probability and this method seems to improve on the results from the word frequency comparison. Of course, this approach is by no means perfect, especially since almost every third song is missclassified.
+
+## Decision Trees
+
+Finally, we are going to utilize classification decision trees, as they are fairly easy to interpret and are able to take multiple predictors into account. In this case, we do not need to prune the tree, as we want to be as detailed as possible about the distinctions between the pens.
+
+### Visualizing the tree
+
+```{r}
+taylorswift_cont <- cbind(taylorswift$pen, taylorswift_cont[, 1:14])
+colnames(taylorswift_cont)[1] <- "pen"
+tree <- tree(as.factor(pen) ~ ., data = taylorswift_cont)
+par(mfrow = c(1, 1), mar = c(0, 0, 2, 0), cex = 0.60)
+plot(tree)
+text(tree, pretty = 0)
+```
+
+In this tree diagram each split partitions the songs into smaller sets until a label (in this case, a pen type) is returned. The left branch follows the rule described by the internal node while the right branch follows the opposite rule. For example, the branch to the left of "acousticness < 0.4865" describes songs with acousticness that is below 0.4865 while the branch to the right describes songs whose acousticness exceeds 0.4865. We can, for example, deduce that a song whose acousticness is less than 0.4865 and speechiness is less than 0.0276 is classified as "fountain pen." In general, though, it is clear that this diagram is very convoluted and requires multiple predictors to classify the songs. 
+
+We are now going to create the confusion matrix for pen types to see where the algorithm made the most errors. We will also print the total error rate.
+
+### Printing the confusion matrix
+
+```{r}
+get_max_column_names <- function(row) {
+  max_index <- which.max(row)
+  colnames(predict(tree, taylorswift_cont))[max_index]
+}
+
+table(apply(predict(tree, taylorswift_cont), 1, get_max_column_names), taylorswift$pen)
+```
+
+### Obtaining the error rate
+
+```{r}
+print(paste("pen error:", 
+            mean(apply(predict(tree, taylorswift_cont), 1, get_max_column_names) != taylorswift$pen)))
+print(paste("prior probability:", mean(taylorswift$pen != "fountain pen")))
+```
+
+This is by far the best algorithm of all that were applied in this project, with an error rate of less than 15\%. Although this error rate is still somewhat high, we can notice that most of the songs that were missclassified were fountain pen songs as glitter gel pen or quill songs. This is not surprising given that the fans originally assigned more songs to the "fountain pen" group. Thus the decision tree method performs relatively well, though it could be certainly improved with more advanced methods or more elaborate data.
+
+# Conclusion
+
+To summarize, we explored a number of ways to analyze Taylor Swift's music and were able, to some extent, quantify the pen types that she uses in her writing process. It would be interesting to consider how these models can be further improved and if they could be applied well to Swift's future releases.
